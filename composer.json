@@ -1,0 +1,20 @@
+{
+    "name": "pmvc-plugin/error-trace",
+    "description": "PMVC error trace lib",
+    "type": "library",
+    "homepage": "https://github.com/pmvc-plugin/error-trace",
+    "keywords": ["error",  "pmvc", "plug", "plug-in"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hill",
+            "email": "hill@kimo.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.0",
+        "pmvc/pmvc": "*",
+        "pmvc-plugin/observer": "*"
+    },
+    "minimum-stability": "dev"
+}
