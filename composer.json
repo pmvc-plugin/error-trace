@@ -1,9 +1,9 @@
 {
-    "name": "pmvc-plugin/error-trace",
+    "name": "pmvc-plugin/error_trace",
     "description": "PMVC error trace lib",
     "type": "library",
-    "homepage": "https://github.com/pmvc-plugin/error-trace",
-    "keywords": ["error",  "pmvc", "plug", "plug-in"],
+    "homepage": "https://github.com/pmvc-plugin/error_trace",
+    "keywords": ["error",  "pmvc", "plug-in"],
     "license": "MIT",
     "authors": [
         {
@@ -12,9 +12,10 @@
         }
     ],
     "require": {
-        "php": ">=5.6.0",
-        "pmvc/pmvc": "*",
-        "pmvc-plugin/observer": "*"
+        "pmvc/pmvc": "*"
+    },
+    "suggest": {
+        "pmvc-plugin/dispatcher": "Allows event dispatch"
     },
     "minimum-stability": "dev"
 }
