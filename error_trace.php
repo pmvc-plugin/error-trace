@@ -29,7 +29,8 @@ class error_trace extends p\PlugIn
 
     public function log()
     {
-        $log='<-- PMVC Error --'."\n";
+        $time = date('Y/m/d-H:i:s');
+        $log='<-- PMVC Error --'.$time."\n";
         $log.=var_export(func_get_args(), true)."\n";
         if (count($_REQUEST)) {
             $log .='---REQUEST---'."\n";
