@@ -21,7 +21,7 @@ class error_trace extends p\PlugIn
 
     public function getLogFile()
     {
-       if(!isset($this['log_file'])){
+       if(!empty($this['log_file'])){
            $this->log_file = $this['log_file'];
        }
        return $this->log_file;
@@ -31,7 +31,7 @@ class error_trace extends p\PlugIn
     {
         $time = date('Y/m/d-H:i:s');
         $log='<-- PMVC Error --'.$time."\n";
-        $log.=var_export(func_get_args(), true)."\n";
+        $log.=print_r(func_get_args(), true)."\n";
         if (count($_REQUEST)) {
             $log .='---REQUEST---'."\n";
             $log .=var_export($_REQUEST, true)."\n";
