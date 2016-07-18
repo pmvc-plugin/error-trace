@@ -4,18 +4,21 @@ namespace PMVC\PlugIn\error_trace;
 use PMVC as p;
 
 ${_INIT_CONFIG}[_CLASS] = __NAMESPACE__.'\error_trace';
-register_shutdown_function(array(${_INIT_CONFIG}[_CLASS],'parseRunEndErrors'));
 
 class error_trace extends p\PlugIn
 {
     private $log_file='/tmp/error_log'; 
+
+    public function init()
+    {
+        register_shutdown_function([$this,'parseRunEndErrors']);
+    }
+
     public static function parseRunEndErrors()
     {
-        if (p\getOption(_ERROR_ENABLE_LOG)) {
-            $Errors=&p\getOption(p\ERRORS);
-            if (!empty($Errors)) {
-                p\log($Errors);
-            }
+        $Errors=&p\getOption(p\ERRORS);
+        if (!empty($Errors)) {
+            p\log($Errors);
         }
     }
 
